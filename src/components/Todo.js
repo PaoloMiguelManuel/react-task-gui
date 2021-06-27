@@ -29,8 +29,8 @@ function Todo({ todo, todos, setTodos }) {
     return (
         <div className="todo">
             <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>{todo.text}</li>
-            <button onClick={toggleCompleted} className="complete-btn"><i className="fas fa-check"></i></button>
-            <button onClick={deleteHandler} className="trash-btn"><i className="fas fa-trash"></i></button>
+            <button onClick={toggleCompleted} className="complete-btn"><i class="fas fa-check"></i></button>
+            <button onClick={deleteHandler} className="trash-btn"><i class="fas fa-backspace"></i></button>
         </div>
     )
 }

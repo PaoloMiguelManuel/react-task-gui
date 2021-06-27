@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to right bottom, #2b5876, #4e4376);
+  color: white;
+  min-height: 100vh;
+  font-family: "Permanent Marker", cursive;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
+  padding: 0.75em;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+
+  input,
+  button, select {
+    font-size: 1.5rem;
+    padding: 0.3em;
+    background-color: white;
+    border: none;
+  }
+
+  button {
+    color: #2b5876;
+    cursor: pointer;
+    margin-right: 0.5em;
+    // transition: all 0.3s ease;
+    &:hover {
+      background-color: #2b5876;
+      color: #fff;
+    }
+  }
+}
+
+// LINEBREAK
+// form button:hover {
+//   background: #ff6f47;
+//   color: white;
+// }
+

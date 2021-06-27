@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react'
 import Form from './components/Form'
 import TodoList from './components/TodoList'
+// import illustration from '../public/undraw_selection_re_ycpo.svg';
 
 function App() {
 
@@ -64,8 +65,9 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Paolo's Todo List</h1>
+        <h1>TODO List</h1>
       </header>
+      {/* <img src={illustration} /> */}
       <Form inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} setStatus={setStatus} />
       <TodoList todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} />
     </div>
