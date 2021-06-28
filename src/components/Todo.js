@@ -23,12 +23,14 @@ function Todo({ todo, todos, setTodos }) {
 
         const matchingTodo = todosCopy.find(todoItem => todoItem.id === todo.id)
         matchingTodo.completed = !matchingTodo.completed;
+        
+     
         setTodos(todosCopy);
     }
 
     return (
-        <div className="todo">
-            <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>{todo.text}</li>
+        <div className="todo-item">
+            <li className={`todo-li-item ${todo.completed ? 'completed' : ''}`}>{todo.text}</li>
             <button onClick={toggleCompleted} className="complete-btn"><i class="fas fa-check"></i></button>
             <button onClick={deleteHandler} className="trash-btn"><i class="fas fa-backspace"></i></button>
         </div>

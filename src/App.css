@@ -39,6 +39,7 @@ form button, form select {
   padding: 0.3em;
   background-color: white;
   border: none;
+  outline: none;
 }
 
 form button {
@@ -50,5 +51,55 @@ form button {
 form button:hover {
   background-color: #2b5876;
   color: #fff;
+}
+
+.todo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1.5em;
+}
+
+.todo-container .todo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background-color: #fff;
+  margin-bottom: 0.5em;
+  margin-right: 1em;
+}
+
+.todo-container .todo-item ul {
+  margin: 5em;
+}
+
+.todo-container .todo-item li {
+  list-style: none;
+  text-align: left;
+  width: 20vw;
+  height: 5vh;
+  color: #2f2f2f;
+  margin-right: 5em;
+}
+
+.todo-container .todo-item button {
+  color: white;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.todo-container .todo-item button.complete-btn {
+  background-color: green;
+}
+
+.todo-container .todo-item button.trash-btn {
+  background-color: red;
 }
 /*# sourceMappingURL=App.css.map */

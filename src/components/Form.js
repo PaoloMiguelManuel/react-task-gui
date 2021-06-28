@@ -9,6 +9,7 @@ function Form({ inputText, setInputText, todos, setTodos, setStatus }) {
 
     const inputTextHandler = (e) => {
         setInputText(inputTextRef.current.value);
+        // console.log(`over here: ${e.target.value}`);
     }
 
     const submitTodoHandler = (e) => {
