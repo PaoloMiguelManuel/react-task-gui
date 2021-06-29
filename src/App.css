@@ -6,40 +6,59 @@
 }
 
 body {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#2b5876), to(#4e4376));
-  background-image: linear-gradient(to right bottom, #2b5876, #4e4376);
-  color: white;
-  min-height: 100vh;
-  font-family: "Permanent Marker", cursive;
-}
-
-h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#2b5876), to(#4e4376));
+  background-image: linear-gradient(to right bottom, #2b5876, #4e4376);
+  min-height: 100vh;
+}
+
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+h1 {
   font-size: 4rem;
   padding: 0.75em;
+  font-family: "Limelight", cursive;
 }
 
 form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
-form input,
-form button, form select {
-  font-size: 1.5rem;
-  padding: 0.3em;
-  background-color: white;
+form input {
   border: none;
+  padding: 1.3em;
   outline: none;
+  width: 50vw;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: #fff;
+  border: none;
+  padding: 1.3em;
+}
+
+form select {
+  font-size: 1rem;
+  padding: 1.3em;
 }
 
 form button {
@@ -53,53 +72,93 @@ form button:hover {
   color: #fff;
 }
 
-.todo-container {
+.todo-list-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 1.5em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin: 3em;
+  width: 70vw;
 }
 
-.todo-container .todo-item {
+.todo-list-container .todo-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   background-color: #fff;
   margin-bottom: 0.5em;
-  margin-right: 1em;
+  height: 3.5em;
+  width: 100%;
 }
 
-.todo-container .todo-item ul {
-  margin: 5em;
+.todo-list-container .todo-item .todo-text {
+  width: 90%;
+  color: black;
+  margin-right: auto;
+  height: 100%;
+  overflow: auto;
+  overflow-wrap: break-word;
+  padding: 1em;
 }
 
-.todo-container .todo-item li {
-  list-style: none;
-  text-align: left;
-  width: 20vw;
-  height: 5vh;
-  color: #2f2f2f;
-  margin-right: 5em;
+.todo-list-container .todo-item .todo-text .todo-edit-input {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
 }
 
-.todo-container .todo-item button {
+.todo-list-container .todo-item .todo-text::-webkit-scrollbar {
+  width: 8px;
+}
+
+.todo-list-container .todo-item .todo-text::-webkit-scrollbar-track {
+  background: #7e7e7e;
+}
+
+.todo-list-container .todo-item .todo-text::-webkit-scrollbar-thumb {
+  background: #6549b7;
+  border-radius: 10px;
+}
+
+.todo-list-container .todo-item .completed {
+  background-color: #b1b1b1;
+  color: #000;
+}
+
+.todo-list-container .todo-item .completed input {
+  text-decoration: line-through;
+}
+
+.todo-list-container .todo-item .undo {
+  background-color: orange;
+}
+
+.todo-list-container .todo-item button {
   color: white;
   border: none;
   padding: 1em;
   cursor: pointer;
+  height: 100%;
+  width: 80px;
 }
 
-.todo-container .todo-item button.complete-btn {
-  background-color: green;
+.todo-list-container .todo-item button.check-btn {
+  background-color: #18a558;
 }
 
-.todo-container .todo-item button.trash-btn {
-  background-color: red;
+.todo-list-container .todo-item button.undo-btn {
+  background-color: #ff9636;
+}
+
+.todo-list-container .todo-item button.remove-btn {
+  background-color: #f83839;
 }
 /*# sourceMappingURL=App.css.map */

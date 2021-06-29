@@ -1,6 +1,14 @@
-import React from 'react'
+// import React from 'react'
+import React, { useRef } from 'react'
+import FlipMove from 'react-flip-move';
+
+
 
 function Todo({ todo, todos, setTodos }) {
+
+    const inputTextRef2 = useRef();
+
+
     const deleteHandler = (e) => {
         const filtered = todos.filter((currentTodoItem) => {
             return currentTodoItem.id !== todo.id
@@ -23,17 +31,36 @@ function Todo({ todo, todos, setTodos }) {
 
         const matchingTodo = todosCopy.find(todoItem => todoItem.id === todo.id)
         matchingTodo.completed = !matchingTodo.completed;
-        
-     
+
+
+        setTodos(todosCopy);
+    }
+
+
+
+    const updateHandler = (e) => {
+        const todosCopy = [...todos]
+
+        const matchingTodo = todosCopy.find(todoItem => todoItem.id === todo.id)
+        // matchingTodo.text = e.target.value;
+        matchingTodo.text = inputTextRef2.current.value;
+
+
         setTodos(todosCopy);
     }
 
     return (
-        <div className="todo-item">
-            <li className={`todo-li-item ${todo.completed ? 'completed' : ''}`}>{todo.text}</li>
-            <button onClick={toggleCompleted} className="complete-btn"><i class="fas fa-check"></i></button>
-            <button onClick={deleteHandler} className="trash-btn"><i class="fas fa-backspace"></i></button>
-        </div>
+
+            <div className="todo-item">
+                <div className={`todo-text ${todo.completed ? 'completed' : ''}`}>
+                    <input ref={inputTextRef2} className="todo-edit-input" value={todo.text} onChange={updateHandler}></input>
+                </div>
+
+                <button onClick={toggleCompleted} className={todo.completed ? 'undo-btn' : 'check-btn'}>{todo.completed ? <i class="fas fa-undo-alt"></i> : <i class="fas fa-check"></i>}</button>
+                <button onClick={deleteHandler} className="remove-btn"><i class="fas fa-backspace"></i></button>
+            </div>
+
+
     )
 }
 

@@ -67,7 +67,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>TODO List</h1>
+        <h1>TO DO LIST</h1>
       </header>
       {/* <img src={illustration} /> */}
       <Form inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} setStatus={setStatus} />
