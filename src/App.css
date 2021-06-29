@@ -104,7 +104,7 @@ form button:hover {
   height: 100%;
   overflow: auto;
   overflow-wrap: break-word;
-  padding: 1em;
+  padding-left: 1em;
 }
 
 .todo-list-container .todo-item .todo-text .todo-edit-input {
