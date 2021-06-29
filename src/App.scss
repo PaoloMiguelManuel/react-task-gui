@@ -7,28 +7,62 @@
 body {
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(to right bottom, #2b5876, #4e4376);
-  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, #13547a, #80d0c7);
+  height: 100vh;
+  width: 100%;
   // background-color: green;
 }
 
 .App {
-  // display: flex;
-  // justify-content: center;
-  // background-color: green;
   display: flex;
   flex-direction: column;
   align-items: center;
-  // width: 75vw;
 }
 
+// header {
+//   margin: 0.75em;
+// }
+
 h1 {
-  // display: flex;
-  // justify-content: center;
-  font-size: 4rem;
-  padding: 0.75em;
-  font-family: "Limelight", cursive;
+  font-size: 3rem;
+    font-family: "Montserrat", sans-serif;
+  background-color: white;
+  margin: 1em;
+  // mix-blend-mode:screen
+  -webkit-background-clip: text;
+
+
 }
+
+
+
+// .image-container {
+//   background-image: url("https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?cs=srgb&dl=pexels-stein-egil-liland-3408744.jpg&fm=jpg"); /* The image used - important! */
+//   background-size: cover;
+//   position: relative; /* Needed to position the cutout text in the middle of the image */
+//   height: 300px; /* Some height */
+// }
+
+// .text {
+//   background-color: white;
+//   color: black;
+//   font-size: 10vw; /* Responsive font size */
+//   font-weight: bold;
+//   margin: 0 auto; /* Center the text container */
+//   padding: 10px;
+//   width: 50%;
+//   text-align: center; /* Center text */
+//   position: absolute; /* Position text */
+//   top: 50%; /* Position text in the middle */
+//   left: 50%; /* Position text in the middle */
+//   transform: translate(-50%, -50%); /* Position text in the middle */
+//   mix-blend-mode: screen; /* This makes the cutout text possible */
+// }
+
+
+
+
+
 
 form {
   display: flex;
@@ -40,13 +74,14 @@ form {
     width: 50vw;
     font-size: 1rem;
   }
-  
+
   button {
     background-color: #fff;
     border: none;
-    padding: 1.3em;
+    padding: 0 1em;
+    font-size: 1.5rem;
   }
-  
+
   select {
     font-size: 1rem;
     padding: 1.3em;
@@ -64,10 +99,6 @@ form {
   }
 }
 
-.todo-input {
-  // height:
-}
-
 .todo-list-container {
   display: flex;
   flex-direction: column;
@@ -76,34 +107,42 @@ form {
   width: 70vw;
 
   .todo-item {
+    border-top-left-radius: 20px;
+    // border-bottom-right-radius: 20px;
+    // border-bottom-left-radius: 1px;
     display: flex;
-    // justify-content: flex-end;
-    // align-items: center;
     background-color: #fff;
     margin-bottom: 0.5em;
     height: 3.5em;
     width: 100%;
 
-    // overflow: scroll;
+    &:hover {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
     .todo-text {
+      border-top-left-radius: 20px;
+      // border: none;
       width: 90%;
       color: black;
       margin-right: auto;
       height: 100%;
       overflow: auto;
       overflow-wrap: break-word;
-      // background: red;
       padding-left: 1em;
-      // font-weight: bold;
-      // background-color: red;
-
+      
       .todo-edit-input {
+        font-size: 1rem;
         background-color: transparent;
-        // background-color: red;
         width: 100%;
         height: 100%;
         border: none;
         outline: none;
+        
+
+        &:focus {
+          color: #ff9636;
+        }
       }
     }
 
@@ -124,13 +163,9 @@ form {
       background-color: #b1b1b1;
       color: #000;
 
-      input {  
+      input {
         text-decoration: line-through;
       }
-    }
-
-    .undo {
-      background-color: orange;
     }
 
     button {
@@ -140,53 +175,114 @@ form {
       cursor: pointer;
       height: 100%;
       width: 80px;
-      // wid
+
       &.check-btn {
-        // background-color: green;
         background-color: #18a558;
+
+        &:hover {
+          filter: brightness(90%);
+        }
       }
+
       &.undo-btn {
         background-color: #ff9636;
+        
+        &:hover {
+          filter: brightness(90%);
+
+        }
       }
+
       &.remove-btn {
         background-color: #f83839;
+        
+        &:hover {
+          filter: brightness(90%);
+        }
       }
     }
   }
 }
 
-// /*CUSTOM SELECTOR */
-// select {
-//   -webkit-appearance: none;
-//   -moz-appearance: none;
-//   -ms-appearance: none;
-//   appearance: none;
-//   outline: 0;
-//   box-shadow: none;
-//   border: 0 !important;
-//   background-image: none;
-// }
+.task-count {
+  display: grid;
+  border-top-left-radius: 20px;
+  // border-top-right-radius: 5px;
+  border-bottom-right-radius: 20px;
+  // border-bottom-left-radius: 5px;
 
-// /* Custom Select */
-// .select {
-//   margin: 1rem;
-//   position: relative;
-//   overflow: hidden;
-// }
-// select {
-//   color: #ff6f47;
-//   font-family: "Poppins", sans-serif;
-//   cursor: pointer;
-//   width: 12rem;
-// }
-// /* Arrow */
-// .select::after {
-//   content: "\25BC";
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   padding: 1rem;
-//   background: #ff6f47;
-//   cursor: pointer;
-//   pointer-events: none;
-// }
+  place-content: center;
+  height: 5em;
+  width: 10em;
+  background-color: #13547a;
+  color: #fff;
+}
+
+.box-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+.box-animation li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  clip-path: polygon(25% 69%, 17% 53%, 1% 61%, 25% 100%, 100% 15%, 85% 0%);
+  animation: animate 20s linear infinite;
+  bottom: -150px;
+}
+.box-animation li:nth-child(1) {
+  left: 86%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+.box-animation li:nth-child(2) {
+  left: 12%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 1.5s;
+  animation-duration: 10s;
+}
+.box-animation li:nth-child(3) {
+  left: 70%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 5.5s;
+}
+.box-animation li:nth-child(4) {
+  left: 42%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 15s;
+}
+.box-animation li:nth-child(5) {
+  left: 65%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 0s;
+}
+.box-animation li:nth-child(6) {
+  left: 15%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3.5s;
+}
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 2;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(-125deg);
+    opacity: 0;
+  }
+}

@@ -5,7 +5,7 @@ function Form({ inputText, setInputText, todos, setTodos, setStatus }) {
 
     const inputTextRef = useRef();
     const selectRef = useRef();
-    
+
 
     const inputTextHandler = (e) => {
         setInputText(inputTextRef.current.value);
@@ -14,7 +14,13 @@ function Form({ inputText, setInputText, todos, setTodos, setStatus }) {
 
     const submitTodoHandler = (e) => {
         e.preventDefault();
-        setTodos([...todos, { text: inputText, completed: false, id: uuid_v4() }]);
+
+
+        if (inputText === '') {
+            return;
+        } else {
+            setTodos([...todos, { text: inputText, completed: false, id: uuid_v4() }]);
+        }
         setInputText('');
     }
 
@@ -27,7 +33,7 @@ function Form({ inputText, setInputText, todos, setTodos, setStatus }) {
         <form>
             <input ref={inputTextRef} onChange={inputTextHandler} type="text" className="todo-input" value={inputText} />
             <button onClick={submitTodoHandler} className="todo-button" type="submit">
-                <i class="fas fa-plus"></i>
+                <i class="fas fa-plus-circle"></i>
             </button>
             <div className="select">
                 <select ref={selectRef} onChange={statusHandler} name="todos" className="filter-todo">

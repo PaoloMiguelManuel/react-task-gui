@@ -57,7 +57,7 @@ function Todo({ todo, todos, setTodos }) {
                 </div>
 
                 <button onClick={toggleCompleted} className={todo.completed ? 'undo-btn' : 'check-btn'}>{todo.completed ? <i class="fas fa-undo-alt"></i> : <i class="fas fa-check"></i>}</button>
-                <button onClick={deleteHandler} className="remove-btn"><i class="fas fa-backspace"></i></button>
+                <button onClick={deleteHandler} className="remove-btn"><i class="fas fa-eraser"></i></button>
             </div>
 
 

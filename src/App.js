@@ -63,15 +63,47 @@ function App() {
   // const getLocal = () => {
 
   // }
-
+  const taskCount = todos.filter((todo) => { return !todo.completed }).length;
   return (
     <div className="App">
-      <header>
-        <h1>TO DO LIST</h1>
-      </header>
+
+
+
+    <h1>PAOLO'S TODO LIST</h1>
+
+
+
+
+
+
+
+      <ul className="box-animation">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+
+
+
+
+
+
+
+
+
+
+
       {/* <img src={illustration} /> */}
       <Form inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} setStatus={setStatus} />
       <TodoList todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} />
+
+      <div className="task-count">
+        {taskCount} task{taskCount === 1 ? '' : 's'} remaining
+      </div>
+
     </div>
   );
 }

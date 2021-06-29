@@ -12,9 +12,10 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#2b5876), to(#4e4376));
-  background-image: linear-gradient(to right bottom, #2b5876, #4e4376);
-  min-height: 100vh;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#13547a), to(#80d0c7));
+  background-image: linear-gradient(to bottom right, #13547a, #80d0c7);
+  height: 100vh;
+  width: 100%;
 }
 
 .App {
@@ -31,9 +32,11 @@ body {
 }
 
 h1 {
-  font-size: 4rem;
-  padding: 0.75em;
-  font-family: "Limelight", cursive;
+  font-size: 3rem;
+  font-family: "Montserrat", sans-serif;
+  background-color: white;
+  margin: 1em;
+  -webkit-background-clip: text;
 }
 
 form {
@@ -53,7 +56,8 @@ form input {
 form button {
   background-color: #fff;
   border: none;
-  padding: 1.3em;
+  padding: 0 1em;
+  font-size: 1.5rem;
 }
 
 form select {
@@ -88,6 +92,7 @@ form button:hover {
 }
 
 .todo-list-container .todo-item {
+  border-top-left-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,7 +102,13 @@ form button:hover {
   width: 100%;
 }
 
+.todo-list-container .todo-item:hover {
+  -webkit-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
 .todo-list-container .todo-item .todo-text {
+  border-top-left-radius: 20px;
   width: 90%;
   color: black;
   margin-right: auto;
@@ -108,11 +119,16 @@ form button:hover {
 }
 
 .todo-list-container .todo-item .todo-text .todo-edit-input {
+  font-size: 1rem;
   background-color: transparent;
   width: 100%;
   height: 100%;
   border: none;
   outline: none;
+}
+
+.todo-list-container .todo-item .todo-text .todo-edit-input:focus {
+  color: #ff9636;
 }
 
 .todo-list-container .todo-item .todo-text::-webkit-scrollbar {
@@ -137,10 +153,6 @@ form button:hover {
   text-decoration: line-through;
 }
 
-.todo-list-container .todo-item .undo {
-  background-color: orange;
-}
-
 .todo-list-container .todo-item button {
   color: white;
   border: none;
@@ -154,11 +166,140 @@ form button:hover {
   background-color: #18a558;
 }
 
+.todo-list-container .todo-item button.check-btn:hover {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+}
+
 .todo-list-container .todo-item button.undo-btn {
   background-color: #ff9636;
 }
 
+.todo-list-container .todo-item button.undo-btn:hover {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+}
+
 .todo-list-container .todo-item button.remove-btn {
   background-color: #f83839;
+}
+
+.todo-list-container .todo-item button.remove-btn:hover {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+}
+
+.task-count {
+  display: -ms-grid;
+  display: grid;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  place-content: center;
+  height: 5em;
+  width: 10em;
+  background-color: #13547a;
+  color: #fff;
+}
+
+.box-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.box-animation li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-clip-path: polygon(25% 69%, 17% 53%, 1% 61%, 25% 100%, 100% 15%, 85% 0%);
+          clip-path: polygon(25% 69%, 17% 53%, 1% 61%, 25% 100%, 100% 15%, 85% 0%);
+  -webkit-animation: animate 20s linear infinite;
+          animation: animate 20s linear infinite;
+  bottom: -150px;
+}
+
+.box-animation li:nth-child(1) {
+  left: 86%;
+  width: 80px;
+  height: 80px;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.box-animation li:nth-child(2) {
+  left: 12%;
+  width: 30px;
+  height: 30px;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+}
+
+.box-animation li:nth-child(3) {
+  left: 70%;
+  width: 100px;
+  height: 100px;
+  -webkit-animation-delay: 5.5s;
+          animation-delay: 5.5s;
+}
+
+.box-animation li:nth-child(4) {
+  left: 42%;
+  width: 150px;
+  height: 150px;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+}
+
+.box-animation li:nth-child(5) {
+  left: 65%;
+  width: 40px;
+  height: 40px;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.box-animation li:nth-child(6) {
+  left: 15%;
+  width: 110px;
+  height: 110px;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    -webkit-transform: translateY(0) rotate(0deg);
+            transform: translateY(0) rotate(0deg);
+    opacity: 2;
+  }
+  100% {
+    -webkit-transform: translateY(-100vh) rotate(-125deg);
+            transform: translateY(-100vh) rotate(-125deg);
+    opacity: 0;
+  }
+}
+
+@keyframes animate {
+  0% {
+    -webkit-transform: translateY(0) rotate(0deg);
+            transform: translateY(0) rotate(0deg);
+    opacity: 2;
+  }
+  100% {
+    -webkit-transform: translateY(-100vh) rotate(-125deg);
+            transform: translateY(-100vh) rotate(-125deg);
+    opacity: 0;
+  }
 }
 /*# sourceMappingURL=App.css.map */
