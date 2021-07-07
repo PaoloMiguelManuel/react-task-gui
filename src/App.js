@@ -82,7 +82,7 @@ function App() {
 
 
 
-      {/* <div className="animation-area">
+      <div className="animation-area">
         <ul className="box-area">
           <li><i class="far fa-check-circle"></i></li>
           <li><i class="far fa-check-circle"></i></li>
@@ -91,7 +91,7 @@ function App() {
           <li><i class="far fa-check-circle"></i></li>
           <li><i class="far fa-check-circle"></i></li>
         </ul>
-      </div> */}
+      </div>
 
 
 

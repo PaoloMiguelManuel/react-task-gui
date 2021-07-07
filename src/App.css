@@ -264,8 +264,8 @@ form .select-container select:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 1em;
-  margin: 3em;
+  gap: 0.75em;
+  margin: 3em 0;
 }
 
 .task-count-container .task-count {
@@ -275,7 +275,8 @@ form .select-container select:hover {
   border-bottom-right-radius: 20px;
   place-content: center;
   height: 5em;
-  width: 100px;
+  width: 45vw;
+  max-width: 200px;
   background-color: #13547a;
   color: #fff;
   text-align: center;
@@ -290,19 +291,16 @@ form .select-container select:hover {
 }
 
 .animation-area {
-  background: -webkit-gradient(linear, right top, left top, from(#8942a8), to(#ba382f));
-  background: linear-gradient(to left, #8942a8, #ba382f);
-  height: 100%;
-  max-width: 50vw;
-  margin: 0 auto;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 .box-area {
   position: absolute;
+  top: 0;
   left: 0;
   width: 100%;
-  max-width: 50vw;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
