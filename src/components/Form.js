@@ -43,9 +43,9 @@ function Form({ inputText, setInputText, todos, setTodos, setStatus }) {
 
                 <div className="select">
                     <select ref={selectRef} onChange={statusHandler} name="todos" className="filter-todo">
-                        <option value="all">All</option>
-                        <option value="completed">Completed</option>
-                        <option value="incompleted">Incompleted</option>
+                        <option value="all">All Tasks</option>
+                        <option value="completed">Complete Tasks</option>
+                        <option value="incompleted">Incomplete Tasks</option>
                     </select>
                 </div>
             </div>
