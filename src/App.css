@@ -16,8 +16,8 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: -webkit-gradient(linear, left top, right bottom, from(#13547a), to(#80d0c7));
-  background: linear-gradient(to bottom right, #13547a, #80d0c7);
+  background: -webkit-gradient(linear, right top, left top, from(#0F2027), color-stop(#203A43), to(#2C5364));
+  background: linear-gradient(to left, #0F2027, #203A43, #2C5364);
   height: 100%;
   margin: 0;
   background-repeat: no-repeat;
@@ -128,13 +128,13 @@ form .select-container select:hover {
       -ms-flex-align: center;
           align-items: center;
   padding-bottom: 5em;
-  width: 100%;
+  width: 90vw;
   max-width: 800px;
   z-index: 1;
 }
 
 .todo-list-container .todo-item {
-  width: 90vw;
+  width: 100%;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   display: -webkit-box;
@@ -235,7 +235,7 @@ form .select-container select:hover {
 
 .header-background {
   background-color: #fff;
-  margin: 3em 0.7em;
+  margin: 5em 0.7em;
   text-align: center;
   border-top-left-radius: 25px;
   border-bottom-right-radius: 25px;
@@ -247,8 +247,8 @@ form .select-container select:hover {
   /* Fallback: Set a background color. */
   background-color: red;
   /* Create the gradient. */
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#24c6dc), to(#514a9d));
-  background-image: linear-gradient(to right bottom, #24c6dc, #514a9d);
+  background-image: -webkit-gradient(linear, right top, left top, from(#2C3E50), to(#4CA1AF));
+  background-image: linear-gradient(to left, #2C3E50, #4CA1AF);
   /* Set the background size and repeat properties. */
   background-size: 100%;
   background-repeat: repeat;

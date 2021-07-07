@@ -21,7 +21,7 @@ body {
   display: flex;
   justify-content: center;
   // width: 100%;
-  background: linear-gradient(to bottom right, #13547a, #80d0c7);
+  background: linear-gradient(to left, #0F2027, #203A43, #2C5364);
   // z-index: -2;
   height: 100%;
   margin: 0;
@@ -116,13 +116,19 @@ form {
   // margin: 3em;
   padding-bottom: 5em;
   // height: 500px;
-  width: 100%;
+  // width: 100%;
+  // max-width: 800px;
+
+
+  width: 90vw;
   max-width: 800px;
+
+
 
   z-index: 1;
 
   .todo-item {
-    width: 90vw;
+    width: 100%;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     // @include cutCorners();
@@ -267,7 +273,7 @@ form {
 
 .header-background {
   background-color: #fff;
-  margin: 3em 0.7em;
+  margin: 5em 0.7em;
   text-align: center;
   border-top-left-radius: 25px;
   border-bottom-right-radius: 25px;
@@ -276,6 +282,7 @@ form {
 }
 
 .gradient-heading {
+  // opacity: 1;
   // letter-spacing: 5px;
   // line-height: line;
   font-size: 3.5rem;
@@ -283,7 +290,7 @@ form {
   background-color: red;
   
   /* Create the gradient. */
-  background-image: linear-gradient(to right bottom, #24c6dc, #514a9d);
+  background-image: linear-gradient(to left, #2C3E50, #4CA1AF);
   
   /* Set the background size and repeat properties. */
   background-size: 100%;
