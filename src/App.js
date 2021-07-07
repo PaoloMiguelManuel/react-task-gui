@@ -30,7 +30,7 @@ function App() {
       case 'completed':
         setFilteredTodos(todos.filter(todo => todo.completed === true));
         break;
-      case 'uncompleted':
+      case 'incompleted':
         setFilteredTodos(todos.filter(todo => todo.completed === false));
         break;
       default:
@@ -63,28 +63,36 @@ function App() {
   // const getLocal = () => {
 
   // }
-  const taskCount = todos.filter((todo) => { return !todo.completed }).length;
+  const incompleteTaskCount = todos.filter((todo) => { return !todo.completed }).length;
+  const completeTaskCount = todos.filter((todo) => { return todo.completed }).length;
+
   return (
     <div className="App">
 
 
 
-    <h1>PAOLO'S TODO LIST</h1>
+
+
+      {/* <h1>PAOLO'S TODO LIST</h1> */}
+
+      <div className="header-background">
+        <h1>TASK TRACKER</h1>
+      </div>
 
 
 
 
+      <div className="animation-area">
+        <ul className="box-area">
+          <li><i class="far fa-check-circle"></i></li>
+          <li><i class="far fa-check-circle"></i></li>
+          <li><i class="far fa-check-circle"></i></li>
+          <li><i class="far fa-check-circle"></i></li>
+          <li><i class="far fa-check-circle"></i></li>
+          <li><i class="far fa-check-circle"></i></li>
+        </ul>
+      </div>
 
-
-
-      <ul className="box-animation">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
 
 
 
@@ -98,11 +106,16 @@ function App() {
 
       {/* <img src={illustration} /> */}
       <Form inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} setStatus={setStatus} />
-      <TodoList todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} />
 
-      <div className="task-count">
-        {taskCount} task{taskCount === 1 ? '' : 's'} remaining
+      <div className="task-count-container">
+        <div className="task-count completed-tasks">
+          {completeTaskCount} task{completeTaskCount === 1 ? '' : 's'} completed
+        </div>
+        <div className="task-count incompleted-tasks">
+          {incompleteTaskCount} task{incompleteTaskCount === 1 ? '' : 's'} remaining
+        </div>
       </div>
+      <TodoList todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} />
 
     </div>
   );

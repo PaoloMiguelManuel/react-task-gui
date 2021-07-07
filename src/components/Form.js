@@ -31,16 +31,23 @@ function Form({ inputText, setInputText, todos, setTodos, setStatus }) {
 
     return (
         <form>
-            <input ref={inputTextRef} onChange={inputTextHandler} type="text" className="todo-input" value={inputText} />
-            <button onClick={submitTodoHandler} className="todo-button" type="submit">
-                <i class="fas fa-plus-circle"></i>
-            </button>
-            <div className="select">
-                <select ref={selectRef} onChange={statusHandler} name="todos" className="filter-todo">
-                    <option value="all">All</option>
-                    <option value="completed">Completed</option>
-                    <option value="uncompleted">Uncompleted</option>
-                </select>
+            <div className="input-and-submit-container">
+                <input placeholder="Enter Task" ref={inputTextRef} onChange={inputTextHandler} type="text" className="todo-input" value={inputText} />
+
+                <button onClick={submitTodoHandler} className="todo-button" type="submit">
+                    <i class="fas fa-plus-circle"></i>
+                </button>
+            </div>
+            {/* <br /> */}
+            <div className="select-container">
+
+                <div className="select">
+                    <select ref={selectRef} onChange={statusHandler} name="todos" className="filter-todo">
+                        <option value="all">All</option>
+                        <option value="completed">Completed</option>
+                        <option value="incompleted">Incompleted</option>
+                    </select>
+                </div>
             </div>
         </form >
     )
