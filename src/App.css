@@ -59,7 +59,7 @@ form .input-and-submit-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 60vw;
+  width: 90vw;
 }
 
 form .input-and-submit-container input {
@@ -127,7 +127,7 @@ form .select-container select:hover {
       -ms-flex-align: end;
           align-items: flex-end;
   padding-bottom: 5em;
-  width: 60vw;
+  width: 90vw;
   z-index: 1;
 }
 
@@ -197,6 +197,16 @@ form .select-container select:hover {
 }
 
 .todo-list-container .todo-item button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: white;
   border: none;
   padding: 1em;
@@ -233,31 +243,31 @@ form .select-container select:hover {
 }
 
 .header-background {
-  border-top-left-radius: 35px;
-  border-bottom-right-radius: 35px;
-  background-image: -webkit-gradient(linear, right top, left bottom, from(#13547a), to(#80d0c7));
-  background-image: linear-gradient(to bottom left, #13547a, #80d0c7);
-  display: -ms-grid;
-  display: grid;
-  place-content: center;
-  margin: 3em;
+  background-color: #fff;
+  margin: 3em 1em;
   text-align: center;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 1em 1em;
 }
 
-.header-background h1 {
-  border-top-left-radius: 35px;
-  border-bottom-right-radius: 35px;
-  font-weight: bold;
-  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: #000;
-  background-color: #fff;
-  mix-blend-mode: lighten;
-  display: -ms-grid;
-  display: grid;
-  place-content: center;
-  font-size: 3rem;
-  height: 10vh;
-  padding: 0.75em;
+.gradient-heading {
+  letter-spacing: 5px;
+  font-size: 3.5rem;
+  /* Fallback: Set a background color. */
+  background-color: red;
+  /* Create the gradient. */
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#24c6dc), to(#514a9d));
+  background-image: linear-gradient(to right bottom, #24c6dc, #514a9d);
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 .task-count-container {
