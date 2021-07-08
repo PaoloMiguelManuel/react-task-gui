@@ -202,7 +202,7 @@ form .select-container select:hover {
   padding: 1em;
   cursor: pointer;
   height: 100%;
-  width: 80px;
+  min-width: 60px;
 }
 
 .todo-list-container .todo-item button.check-btn {

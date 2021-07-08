@@ -204,7 +204,7 @@ form {
       // gap: 0.5em;
       cursor: pointer;
       height: 100%;
-      width: 80px;
+      min-width: 60px;
 
       &.check-btn {
         background-color: #18a558;
