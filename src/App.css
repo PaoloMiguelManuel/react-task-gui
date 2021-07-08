@@ -291,6 +291,7 @@ form .select-container select:hover {
 }
 
 .animation-area {
+  z-index: -1;
   max-width: 100vw;
   max-height: 100vh;
 }
