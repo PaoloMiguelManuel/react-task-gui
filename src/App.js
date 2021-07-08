@@ -76,7 +76,7 @@ function App() {
       {/* <h1>PAOLO'S TODO LIST</h1> */}
 
       <div className="header-background">
-        <h1 className="gradient-heading">TASK TRACKER</h1>
+        <h1>TASK TRACKER</h1>
       </div>
 
 
